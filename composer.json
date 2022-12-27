@@ -1,0 +1,41 @@
+{
+    "name": "laravel-dev-kit/eloquent",
+    "description": "Eloquent Helper for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "walshdev",
+            "email": "alexwalsh.dev@gmail.com",
+            "homepage": "https://devclouse.com"
+        }
+    ],
+    "homepage": "https://github.com/laravel-dev-kit/eloquent",
+    "keywords": ["Laravel", "Eloquent"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelDevKit\\Eloquent\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelDevKit\\Eloquent\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelDevKit\\Eloquent\\ServiceProvider"
+            ],
+            "aliases": {
+                "Eloquent": "LaravelDevKit\\Eloquent\\Facades\\Eloquent"
+            }
+        }
+    }
+}
