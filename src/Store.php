@@ -72,7 +72,7 @@ class Store
         DB::beginTransaction();
 
         try {
-            return tap($model->newModelInstance(), function ($instance) use($data, $parameters) {
+            return tap($model, function ($instance) use($data, $parameters) {
                 $args = array_merge([$instance, new Data($data)], $parameters);
 
                 $this->call('beforeFill', ...array_values($args));
