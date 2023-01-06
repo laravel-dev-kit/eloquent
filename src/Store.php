@@ -77,7 +77,9 @@ class Store
 
                 $this->call('beforeFill', ...array_values($args));
 
-                $instance->fill($data);
+                $instance->fill(
+                    array_filter($data, static fn($var) => $var !== null)
+                );
 
                 $this->call('afterFill', ...array_values($args));
 
